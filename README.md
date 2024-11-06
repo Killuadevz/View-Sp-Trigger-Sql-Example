@@ -1,27 +1,28 @@
 ## Aula 06/11/2024
 
+
+## View 1 
 ```sql
--- View 1 --
 CREATE VIEW cidades AS SELECT pais_id, pais FROM pais;
 SELECT * FROM cidades LIMIT 3;
 ```
 
+## View 2 
 ```sql
--- View 2 --
 CREATE VIEW  aluguel AS SELECT aluguel_id , data_de_devolucao FROM aluguel;
 SELECT * FROM aluguel ORDER BY data_de_devolucao ASC;
 SELECT * FROM aluguel LIMIT 100;
 ```
 
+## View 3 
 ```sql
--- View 3 --
 CREATE VIEW  ator AS SELECT ator_id , primeiro_nome FROM ator;
 SELECT * FROM ator ORDER BY primeiro_nome DESC;
 SELECT * FROM ator LIMIT 100;
 ```
 
+## SP 1
 ```sql
--- SP 1 
 DELIMITER //
 CREATE PROCEDURE FINDBYNAME (in id int)
 BEGIN 
@@ -37,10 +38,10 @@ DELIMITER ;
 CALL FINDBYNAME(1);
 
 ```
+## SP 2
 
 ```sql
 
--- SP 2
 DELIMITER //
 CREATE PROCEDURE FIND400 (in id int)
 BEGIN 
@@ -52,8 +53,8 @@ END //
 CALL FIND400(1);
 ```
 
+## SP 3
 ```sql
--- SP 3
 DELIMITER //
 CREATE PROCEDURE FINDCITY (in id int)
 BEGIN 
@@ -66,9 +67,8 @@ END //
 CALL FINDCITY(1);
 ```
 
+## Trigger 1
 ```sql
--- Trigger 1
-
 DELIMITER $$
 CREATE TRIGGER after_update_loja
 AFTER UPDATE ON LOJA
@@ -80,8 +80,9 @@ END $$
 DELIMITER ;
 ```
 
+## Trigger 2
+
 ```sql
--- Trigger 2
 DELIMITER $$
 CREATE TRIGGER after_update_idioma
 AFTER UPDATE ON idioma
@@ -93,8 +94,8 @@ END $$
 DELIMITER ;
 ```
 
+##  Trigger 3
 ```sql
--- Trigger 3
 DELIMITER $$
 CREATE TRIGGER after_update_inventario
 AFTER UPDATE ON inventario
